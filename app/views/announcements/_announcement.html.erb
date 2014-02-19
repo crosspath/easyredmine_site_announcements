@@ -1,15 +1,19 @@
 <%= div_for announcement do %>
   <h3><%= announcement.title %></h3>
-  <%= authoring(announcement.created_at, announcement.user) %> | 
 
-  <% if announcement.message.present? %> 
-    <%= link_to l(:label_announcement_show), announcement, remote: true %> |
-  <% end %>
+  <div class="wiki">
+    <%= textilizable announcement.message %>
+  </div>
 
-  <%= link_to l(:label_announcement_hide), [:hide, announcement], remote: true %>
+  <div class="links">
+    <%= avatar announcement.user, size: "24" %><%= announcement.user.try :name %>
+    | <%= link_to l(:label_announcement_hide), [:hide, announcement], remote: true %>
 
-  <% if User.current.admin? %> 
-    | <%= link_to l(:button_edit), [:edit, announcement], remote: true %>
-    | <%= delete_link announcement, remote: true %>
-  <% end %>
+    <% if User.current.admin? %>
+      | <%= link_to l(:button_edit), [:edit, announcement], remote: true %>
+      | <%= delete_link announcement, remote: true %>
+    <% end %>
+    
+    | <%= link_to l(:label_all_announcements), announcements_path %>
+  </div>
 <% end %>

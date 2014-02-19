@@ -4,7 +4,7 @@ class AnnouncementsController < ApplicationController
   respond_to :html, only: :index
   respond_to :js, except: :index
 
-  before_filter :require_admin, except: [:hide, :show]
+  before_filter :require_admin, except: [:index, :hide, :show]
   before_filter :find_announcement, except: [:hide, :index, :new, :create]
 
   def hide
@@ -17,7 +17,7 @@ class AnnouncementsController < ApplicationController
   end
 
   def index
-    @announcements = Announcement.where "ends_at > :now", now: Time.zone.now
+    @announcements = Announcement.order('ends_at DESC')
     respond_with @announcements
   end
 
@@ -59,7 +59,6 @@ class AnnouncementsController < ApplicationController
   private
   def find_announcement
     @announcement = Announcement.find params[:id]
-    return_404 if @announcement.ends_at < Time.zone.now
   rescue ActiveRecord::RecordNotFound
     render_404
   end

@@ -5,5 +5,6 @@ en:
   label_announcement_edit: Edit Announcement
   label_announcement_hide: Hide Announcement
   label_announcement_show: Read More
+  label_all_announcements: All Announcements
   field_starts_at: Show beginning on
   field_ends_at: Hide after

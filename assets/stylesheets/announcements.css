@@ -1,21 +1,39 @@
 #admin-menu a.announcements {
+  padding-left: 24px;
   background-image: url(../../../images/warning.png);
+  background-position: 0;
 }
 
 #announcements {
   width: 100%;
-  background-color: #F1F094;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  z-index: 999;
+  text-align: left;
 }
 
 #announcements .announcement {
-  border-top: solid 1px black;
-  padding: 10px 0;
+  padding: 0 0 10px 0;
+  margin-top: 32px;
+  background-color: hsl(43, 57%, 77%);
+  border-radius: 8px;
 }
 
 #content .announcement {
   margin-bottom: 20px;
+}
+
+.announcement  .wiki {
+  padding: 0 10px;
+  line-height: 150%;
+}
+
+.announcement .links {
+  font-weight: bold;
+}
+
+.announcement .avatar-container {
+  margin-top: -6px;
+}
+
+#announcements .avatar-container {
+  margin-left: 5px;
+  margin-top: -8px;
 }

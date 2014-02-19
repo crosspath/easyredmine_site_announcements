@@ -1,0 +1,10 @@
+ru:
+  label_announcement: Объявление
+  label_announcement_plural: Объявления
+  label_announcement_new: Новое объявление
+  label_announcement_edit: Изменить объявление
+  label_announcement_hide: Скрыть объявление
+  label_announcement_show: Дальше
+  label_all_announcements: Все объявления
+  field_starts_at: Начало
+  field_ends_at: Завершение

@@ -6,7 +6,7 @@
   <% else %>
     <%= render @announcements %>
   <% end %>
-  <%= link_to l(:button_add), new_announcement_path, remote: true %>
+  <% if User.current.admin? && User.current.id != 126 %><%= link_to l(:button_add), new_announcement_path, remote: true %><% end %>
 </div>
 
 <%# Ensure we get Wiki code %>
